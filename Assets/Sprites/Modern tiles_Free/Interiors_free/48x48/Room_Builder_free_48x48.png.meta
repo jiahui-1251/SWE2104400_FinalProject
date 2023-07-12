@@ -309,10 +309,10 @@ TextureImporter:
       name: Room_Builder_free_48x48_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
-        width: 480
-        height: 768
+        x: 86
+        y: 816
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -683,6 +683,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Room_Builder_free_48x48_28
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 773
+        width: 138
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3b6e74d971d2c42b6bc61fa516cbb0
+      internalID: -653030017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_free_48x48_30
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 766
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9412ae8fed80b7c4dbb1586c8662d28f
+      internalID: 938575042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_free_48x48_27
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 816
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02140f0a434c0bc44ac57ade23855fa7
+      internalID: 1364043435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room_Builder_free_48x48_29
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 765
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbcbfacdf9c6fe6458b6eca6ead7ba51
+      internalID: -1215120785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -714,7 +798,11 @@ TextureImporter:
       Room_Builder_free_48x48_24: -1716497944
       Room_Builder_free_48x48_25: 1714231532
       Room_Builder_free_48x48_26: 492576103
+      Room_Builder_free_48x48_27: 1364043435
+      Room_Builder_free_48x48_28: -653030017
+      Room_Builder_free_48x48_29: -1215120785
       Room_Builder_free_48x48_3: 1115415962
+      Room_Builder_free_48x48_30: 938575042
       Room_Builder_free_48x48_4: 2082643423
       Room_Builder_free_48x48_5: -483265968
       Room_Builder_free_48x48_6: 1211822397
