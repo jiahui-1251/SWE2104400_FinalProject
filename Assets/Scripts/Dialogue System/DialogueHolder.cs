@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 namespace DialogueSystem
 {
@@ -7,6 +8,11 @@ namespace DialogueSystem
     {
         [SerializeField] private GameObject parentObject;
         [SerializeField] private GameObject locationBox;
+        
+        //Load next scene
+        public bool inDialogue = false;
+        public string SceneName;
+
         private void Awake()
         {
             StartCoroutine(dialogueSequence());
@@ -27,6 +33,11 @@ namespace DialogueSystem
             {
                 parentObject.SetActive(false);
                 locationBox.SetActive(true);
+            }
+
+            if(inDialogue)
+            {
+                SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
             }
         }
     

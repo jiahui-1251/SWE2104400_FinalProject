@@ -22,4 +22,15 @@ public class PlayerMovement : MonoBehaviour
         //Movement
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "NPC")
+        {
+            if(Input.GetKey(KeyCode.E))
+            {
+                collision.gameObject.GetComponent<NPCController>().ActivateDialogue();
+            }
+        }
+    }
 }
