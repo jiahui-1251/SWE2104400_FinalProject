@@ -1,19 +1,29 @@
-// using System.Collections;
-// using System.Collections.Generic;
-// using UnityEngine;
-// using UnityEngne.UI;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
-// nameSpace DialogueSystem
-// {
-//     public class DialogueBaseClass : MonoBehaviour
-//     {
-//         private IEnumerator WriteText(string input, Text textHolder)
-//         {
-//             for(int i = 0; i < input.length; i++)
-//             {
-//                 textHolder.text += input[i];
-//                 yield return new WaitForSeconds(0.1f);
-//             }
-//         }
-//     }
-// }
+namespace DialogueSystem
+{
+    public class DialogueBaseClass : MonoBehaviour
+    {
+        public bool finished{get; private set;}
+
+        protected IEnumerator WriteText(string input, TextMeshProUGUI  textHolder, float delay, AudioClip sound, float delayBetweenLines)
+        {
+            int i;
+            for(i = 0; i < input.Length; i++)
+            {
+                textHolder.text += input[i];
+                SoundManager.instance.PlaySound(sound);
+                yield return new WaitForSeconds(delay);
+            }
+
+            yield return new WaitForSeconds(delayBetweenLines);
+
+            finished = true;
+        }
+    }
+}
+
