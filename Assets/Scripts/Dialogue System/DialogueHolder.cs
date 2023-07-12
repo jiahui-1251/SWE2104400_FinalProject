@@ -6,6 +6,7 @@ namespace DialogueSystem
     public class DialogueHolder : MonoBehaviour
     {
         [SerializeField] private GameObject parentObject;
+        [SerializeField] private GameObject locationBox;
         private void Awake()
         {
             StartCoroutine(dialogueSequence());
@@ -25,6 +26,7 @@ namespace DialogueSystem
             if(i == transform.childCount)
             {
                 parentObject.SetActive(false);
+                locationBox.SetActive(true);
             }
         }
     

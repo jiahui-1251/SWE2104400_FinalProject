@@ -6,12 +6,23 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance{get; private set;}
 
+    [Header("-----------Audio Source------------")]
+    [SerializeField] AudioSource musicSource;
     private AudioSource SFXsound;
+
+    [Header("-----------Audio Clip------------")]
+    public AudioClip MainBackgroundMusic;
 
     private void Awake()
     {
         instance = this;
         SFXsound = GetComponent<AudioSource>();
+    }
+
+    void Start()
+    {
+        musicSource.clip = MainBackgroundMusic;
+        musicSource.Play();
     }
 
     public void PlaySound(AudioClip sound)
