@@ -21,16 +21,17 @@ public class HitNote : MonoBehaviour
         if(collision.tag == "Activator")
         {
             hit = true;
-            collision.gameObject.SetActive(false);
+            
         }
+        gameObject.SetActive(false);
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.tag == "Activator")
-        {
-            hit = false;
-            collision.gameObject.SetActive(false);
-        }
-    }
+    // private void OnTriggerExit2D(Collider2D collision)
+    // {
+    //     if(collision.tag == "Activator")
+    //     {
+    //         hit = false;
+    //         gameObject.SetActive(false);
+    //     }
+    // }
 }
