@@ -27,10 +27,10 @@ namespace DialogueSystem
                 transform.GetChild(i).gameObject.SetActive(true);
                 yield return new WaitUntil(() => transform.GetChild(i).GetComponent<DialogueLine>().finished);
             }
-            gameObject.SetActive(false);
 
             if(i == transform.childCount)
             {
+                gameObject.SetActive(false);
                 parentObject.SetActive(false);
                 locationBox.SetActive(true);
             }
@@ -41,12 +41,12 @@ namespace DialogueSystem
             }
         }
     
-            private void Deactivate()
+        private void Deactivate()
+        {
+            for (int i = 0; i < transform.childCount; i++)
             {
-                for (int i = 0; i < transform.childCount; i++)
-                {
-                    transform.GetChild(i).gameObject.SetActive(false);
-                }
+                transform.GetChild(i).gameObject.SetActive(false);
             }
+        }
     }
 }
