@@ -25,7 +25,7 @@ public class BubbleController : MonoBehaviour
     {
         if(!hasStarted)
         {
-            if(Input.anyKeyDown)
+            if(Input.GetMouseButtonDown(1))
             {
                 hasStarted = true;
             }
