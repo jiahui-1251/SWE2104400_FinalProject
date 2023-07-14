@@ -9,7 +9,6 @@ public class BubbleController : MonoBehaviour
     [SerializeField] public float x = 60.0f, y = 20.0f;
     [SerializeField] public Rigidbody2D rb;
     public bool hasStarted = false;
-    public bool finished = true;
     Vector2 movement;
     
 

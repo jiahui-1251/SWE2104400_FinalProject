@@ -2,40 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BubbleHolder : MonoBehaviour
+namespace BubbleWorld
 {
-    // Start is called before the first frame update
-    void Start()
+    public class BubbleHolder : MonoBehaviour
     {
+        // Start is called before the first frame update
         
-    }
-
-    private IEnumerator dialogueSequence()
-    {
-        int i;
-        for (i = 0; i < transform.childCount; i++)
+        void Start()
         {
-            Deactivate();
-            transform.GetChild(i).gameObject.SetActive(true);
-            yield return new WaitForSeconds(1.0f);
-            //yield return new WaitUntil(() => transform.GetChild(i).GetComponent<BubbleController>().finished);
+            StartCoroutine(dialogueSequence());
         }
 
-        if(i == transform.childCount)
+        private IEnumerator dialogueSequence()
         {
-            gameObject.SetActive(false);
-        }
-
-        // if(inDialogue)
-        // {
-        //     SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
-        // }
-    }
-        private void Deactivate()
-        {
-            for (int i = 0; i < transform.childCount; i++)
+            int i;
+            for (i = 0; i < transform.childCount; i++)
             {
-                transform.GetChild(i).gameObject.SetActive(false);
+                Deactivate();
+                transform.GetChild(i).gameObject.SetActive(true);
+                //yield return new WaitForSeconds(1.0f);
+                HitNote hitNote = transform.GetChild(i).GetComponent<HitNote>();
+                hitNote.finished = false;
+                yield return new WaitUntil(() => transform.GetChild(i).GetComponent<HitNote>().finished);
             }
+
+            if(i == transform.childCount)
+            {
+                gameObject.SetActive(false);
+            }
+
+            // if(inDialogue)
+            // {
+            //     SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
+            // }
         }
+            private void Deactivate()
+            {
+                for (int i = 0; i < transform.childCount; i++)
+                {
+                    transform.GetChild(i).gameObject.SetActive(false);
+                }
+            }
+    }    
 }
+
+
