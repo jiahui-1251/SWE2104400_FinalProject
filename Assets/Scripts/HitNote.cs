@@ -28,15 +28,26 @@ namespace BubbleWorld
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(userClicked && collision.tag == "Activator")
+            if(userClicked && collision.CompareTag("Activator"))
             {
+                //Debug.Log(gameObject.hit);
+                // if(transform.position.y > 3.0f)
+                // {
+                //     hit = true;
+                    
+                //      HitPass.SetActive(true);
+                //      StartCoroutine(DeactivateAfterDelay(HitPass, Bubble));
+                // }
+                // else
+                // {
+                //      HitFail.SetActive(true);
+                //      StartCoroutine(DeactivateAfterDelay(HitFail, Bubble));
+                // }
                 hit = true;
                 HitPass.SetActive(true);
                 StartCoroutine(DeactivateAfterDelay(HitPass, Bubble));
-                //HitPass.SetActive(true);
-                //finished = true;
-                //StartCoroutine(DeactivateAfterDelay());
             }
+    
         }
 
         private void OnTriggerExit2D(Collider2D collision)
@@ -48,7 +59,7 @@ namespace BubbleWorld
             //     finished = true;
             //     StartCoroutine(DeactivateAfterDelay());
             // }
-                if (!userClicked && collision.tag == "Activator")
+                if (!userClicked && collision.CompareTag("Activator"))
                 {
                     if (hit)
                     {
@@ -64,27 +75,6 @@ namespace BubbleWorld
 
             userClicked = false;
         }
-
-        // private IEnumerator DeactivateHitResult(GameObject HitResult)
-        // {
-        //     yield return new WaitForSeconds(delayTime);
-        //     // if (hit)
-        //     // {
-        //     //     HitPass.SetActive(false);
-        //     // }
-        //     // else
-        //     // {
-        //     //     HitFail.SetActive(false);   
-        //     // }
-        //     HitResult.SetActive(false);
-        //     //gameObject.SetActive(false);
-        // }
-
-        // private IEnumerator Deactivating()
-        // {
-        //     yield return new WaitForSeconds(delayTime);
-        //     gameObject.SetActive(false);
-        // }
 
         private IEnumerator DeactivateAfterDelay(GameObject HitResult, GameObject Bubble)
         {

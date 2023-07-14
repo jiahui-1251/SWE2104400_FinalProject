@@ -7,7 +7,8 @@ namespace BubbleWorld
     public class BubbleHolder : MonoBehaviour
     {
         // Start is called before the first frame update
-        
+        [SerializeField] private GameObject nextLevel;
+
         void Start()
         {
             StartCoroutine(dialogueSequence());
@@ -29,12 +30,8 @@ namespace BubbleWorld
             if(i == transform.childCount)
             {
                 gameObject.SetActive(false);
+                nextLevel.SetActive(true);
             }
-
-            // if(inDialogue)
-            // {
-            //     SceneManager.LoadScene(SceneName, LoadSceneMode.Single);
-            // }
         }
             private void Deactivate()
             {
