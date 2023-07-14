@@ -59,6 +59,7 @@ namespace BubbleWorld
             //     finished = true;
             //     StartCoroutine(DeactivateAfterDelay());
             // }
+                userClicked = false;
                 if (!userClicked && collision.CompareTag("Activator"))
                 {
                     if (hit)
@@ -73,7 +74,7 @@ namespace BubbleWorld
                     }
                 }
 
-            userClicked = false;
+            //userClicked = false;
         }
 
         private IEnumerator DeactivateAfterDelay(GameObject HitResult, GameObject Bubble)
